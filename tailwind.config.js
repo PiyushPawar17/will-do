@@ -2,7 +2,11 @@
 module.exports = {
 	content: ['./pages/**/*.{ts,tsx,scss}', './components/**/*.{ts,tsx,scss}'],
 	theme: {
-		extend: {}
+		extend: {
+			lineHeight: {
+				0: 0
+			}
+		}
 	},
 	plugins: []
 };

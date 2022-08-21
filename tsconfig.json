@@ -18,10 +18,13 @@
 		"baseUrl": ".",
 		"paths": {
 			"@components/*": ["./components/*"],
-			"@styles/*": ["./styles/*"]
+			"@styles/*": ["./styles/*"],
+			"@utils": ["./utils/index.ts"],
+			"@router": ["./pages/api/trpc/[trpc].ts"],
+			"@models": ["./models/index.ts"]
 		},
 		"incremental": true
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "additional.d.ts"],
 	"exclude": ["node_modules"]
 }
