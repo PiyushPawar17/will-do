@@ -18,7 +18,7 @@ export const appRouter = trpc
 	})
 	.mutation('create-todo', {
 		input: z.object({
-			title: z.string().trim().nonempty()
+			title: z.string().trim().min(1)
 		}),
 		async resolve({ input }) {
 			await dbConnect();
@@ -35,7 +35,7 @@ export const appRouter = trpc
 	.mutation('update-todo', {
 		input: z.object({
 			id: z.string(),
-			title: z.string().trim().nonempty().optional(),
+			title: z.string().trim().min(1).optional(),
 			status: z.enum(['pending', 'in-progress', 'done']).optional()
 		}),
 		async resolve({ input }) {
